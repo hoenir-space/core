@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="https://hoenir.space/resource/schema/data"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="https://hoenir.space/resource/schema/data ../xsd/data.xsd">
+    <vertex>
+        <id>hde:hoenir.[space|blue|eu|at]:7c4b388b-6360-4678-b709-ff0d6e38c17b</id>
+        <type>hde:hoenir.[space|blue|eu|at]:31842730-17d0-4118-a8cd-a9b6993b80e0</type>
+        <properties>
+            <property type="hde:hoenir.[space|blue|eu|at]:23396456-9f47-4e96-925f-f15bdd238e26">Bla Bla dfgdfg</property>
+            <property type="hde:hoenir.[space|blue|eu|at]:5ab7b612-d262-423e-abae-f9593b01a560">Bla Bla</property>
+        </properties>
+        <edges>
+            <edge type="hde:hoenir.[space|blue|eu|at]:70879393-26f6-419a-a8d4-a5bbf57ceccb"
+                  weight="1.0"
+                  target="hde:hoenir.[space|blue|eu|at]:01603165-6ee5-43d9-98f6-d95e3feda8f4"/>
+        </edges>
+    </vertex>
+</data>
