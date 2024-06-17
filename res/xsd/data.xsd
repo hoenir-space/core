@@ -8,7 +8,7 @@
     </xs:simpleType>
     <xs:complexType name="edgeType">
         <xs:simpleContent>
-            <xs:extension base="data:UUIDType" xmlns:data="https://hoenir.space/resource/schema/data">
+            <xs:extension base="xs:string" xmlns:data="https://hoenir.space/resource/schema/data">
                 <xs:attribute type="data:UUIDType" name="type" use="required" xmlns:data="https://hoenir.space/resource/schema/data"/>
                 <xs:attribute type="xs:float" name="weight" use="required" xmlns:data="https://hoenir.space/resource/schema/data"/>
                 <xs:attribute type="data:UUIDType" name="target" use="required" xmlns:data="https://hoenir.space/resource/schema/data"/>

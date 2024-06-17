@@ -7,7 +7,7 @@ pub fn hello(){
 
     println!(
         "{} {} {} {} {}.",
-        "        Hello!   This is the",
+        "              This is the",
         "Hœnir".blue().bold(),
         "CLI".bold(),
         "with core library version",
