@@ -44,7 +44,7 @@ pub fn print() {
         "Hello! This is the",
         "Hœnir".blue().bold(),
         "CLI".bold(),
-        "in version",
+        "with core library version",
         VERSION.blue()
     );
 }

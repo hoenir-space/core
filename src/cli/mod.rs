@@ -1,2 +1,2 @@
 
-mod logo;
+pub mod logo;
