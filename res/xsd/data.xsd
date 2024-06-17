@@ -40,7 +40,7 @@
             <xs:element type="data:edgesType" name="edges" maxOccurs="1" minOccurs="1" xmlns:data="https://hoenir.space/resource/schema/data"/>
         </xs:sequence>
     </xs:complexType>
-    <xs:complexType name="packType">
+    <xs:complexType name="graphType">
         <xs:sequence>
             <xs:element type="data:UUIDType" name="id" maxOccurs="1" minOccurs="1" xmlns:data="https://hoenir.space/resource/schema/data"/>
             <xs:element type="data:UUIDType" name="type" maxOccurs="1" minOccurs="1" xmlns:data="https://hoenir.space/resource/schema/data"/>
@@ -49,7 +49,7 @@
     </xs:complexType>
     <xs:complexType name="dataType">
             <xs:choice>
-                <xs:element type="data:packType" name="pack" maxOccurs="1" minOccurs="1" xmlns:data="https://hoenir.space/resource/schema/data"/>
+                <xs:element type="data:graphType" name="graph" maxOccurs="1" minOccurs="1" xmlns:data="https://hoenir.space/resource/schema/data"/>
                 <xs:element type="data:vertexType" name="vertex" maxOccurs="1" minOccurs="1" xmlns:data="https://hoenir.space/resource/schema/data"/>
             </xs:choice>
     </xs:complexType>

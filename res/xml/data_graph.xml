@@ -2,7 +2,7 @@
 <data xmlns="https://hoenir.space/resource/schema/data"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="https://hoenir.space/resource/schema/data ../xsd/data.xsd">
-    <pack>
+    <graph>
         <id>hde:hoenir.[space|blue|eu|at]:a1b5500f-8a35-459a-90b9-78aa1ccfcbc4</id>
         <type>hde:hoenir.[space|blue|eu|at]:7c7ab297-04f6-4548-95a8-6116d2007359</type>
         <vertex>
@@ -31,5 +31,5 @@
                       target="hde:hoenir.[space|blue|eu|at]:4c7f7ed4-24c2-42ec-bc6f-bb6e8ac07bdf"/>
             </edges>
         </vertex>
-    </pack>
+    </graph>
 </data>
