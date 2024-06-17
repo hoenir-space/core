@@ -1,6 +1,7 @@
-use crate::VERSION;
 use colored::Colorize;
+
 pub fn print() {
+
     let s = "
 ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
@@ -39,12 +40,4 @@ pub fn print() {
         }
     }
     println!("");
-    println!(
-        "{} {} {} {} {}.",
-        "        Hello!   This is the",
-        "Hœnir".blue().bold(),
-        "CLI".bold(),
-        "with core library version",
-        VERSION.blue()
-    );
 }
