@@ -1,6 +1,6 @@
 [package]
 name = "hoenir-core"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 authors = ["G0los <golos@hoenir.space>"]
 categories = ["network-programming", "data-structures", "command-line-utilities", "web-programming"]
@@ -12,3 +12,5 @@ repository = "https://github.com/hoenir-space/core"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+colored = "2.1.0"
+console = "0.15.8"
