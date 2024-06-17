@@ -2,6 +2,12 @@
 name = "hoenir-core"
 version = "0.1.0"
 edition = "2021"
+authors = ["G0los <golos@hoenir.space>"]
+categories = ["network-programming", "data-structures", "command-line-utilities", "web-programming"]
+description = "Hœnir for handling the corresponding exchange of data using Rust."
+keywords = ["network", "data", "cli", "web"]
+license-file = "LICENSE"
+repository = "https://github.com/hoenir-space/core"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
