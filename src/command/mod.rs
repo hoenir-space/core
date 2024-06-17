@@ -1,1 +1,1 @@
-mod hello;
+pub mod hello;

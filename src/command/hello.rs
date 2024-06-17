@@ -1,7 +1,7 @@
 use crate::cli;
 use crate::cli::logo;
 
-pub fn hello(){
+pub fn run(){
     logo::print();
     cli::hello();
 }
