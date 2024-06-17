@@ -41,7 +41,7 @@ pub fn print() {
     println!("");
     println!(
         "{} {} {} {} {}.",
-        "Hello! This is the",
+        "        Hello!   This is the",
         "Hœnir".blue().bold(),
         "CLI".bold(),
         "with core library version",
