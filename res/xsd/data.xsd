@@ -34,18 +34,18 @@
     </xs:complexType>
     <xs:complexType name="vertexType">
         <xs:sequence>
-            <xs:element type="data:UUIDType" name="id" maxOccurs="1" minOccurs="1" xmlns:data="https://hoenir.space/resource/schema/data"/>
-            <xs:element type="data:UUIDType" name="type" maxOccurs="1" minOccurs="1" xmlns:data="https://hoenir.space/resource/schema/data"/>
             <xs:element type="data:propertiesType" name="properties" maxOccurs="1" minOccurs="1" xmlns:data="https://hoenir.space/resource/schema/data"/>
             <xs:element type="data:edgesType" name="edges" maxOccurs="1" minOccurs="1" xmlns:data="https://hoenir.space/resource/schema/data"/>
         </xs:sequence>
+        <xs:attribute type="data:UUIDType" name="id" use="required" xmlns:data="https://hoenir.space/resource/schema/data"/>
+        <xs:attribute type="data:UUIDType" name="type" use="required" xmlns:data="https://hoenir.space/resource/schema/data"/>
     </xs:complexType>
     <xs:complexType name="graphType">
         <xs:sequence>
-            <xs:element type="data:UUIDType" name="id" maxOccurs="1" minOccurs="1" xmlns:data="https://hoenir.space/resource/schema/data"/>
-            <xs:element type="data:UUIDType" name="type" maxOccurs="1" minOccurs="1" xmlns:data="https://hoenir.space/resource/schema/data"/>
             <xs:element type="data:vertexType" name="vertex" minOccurs="1" maxOccurs="unbounded" xmlns:data="https://hoenir.space/resource/schema/data"/>
         </xs:sequence>
+        <xs:attribute type="data:UUIDType" name="id" use="required" xmlns:data="https://hoenir.space/resource/schema/data"/>
+        <xs:attribute type="data:UUIDType" name="type" use="required" xmlns:data="https://hoenir.space/resource/schema/data"/>
     </xs:complexType>
     <xs:complexType name="dataType">
             <xs:choice>
