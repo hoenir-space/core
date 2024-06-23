@@ -6,12 +6,11 @@ pub mod logo;
 pub fn hello(){
 
     println!(
-        "{} {} {} {} {}.",
-        "              This is the",
+        "[ {} CLI  | version {:<9} | {:^22} | {:^22} ]",
         "Hœnir".blue().bold(),
-        "CLI".bold(),
-        "with core library version",
-        VERSION.blue()
+        VERSION.blue(),
+        "-",
+        "-"
     );
 
 }
