@@ -6,11 +6,11 @@ pub mod logo;
 pub fn hello(){
 
     println!(
-        "[ {} CLI  | version {:<9} | {:^20} | {:^20} ]",
+        "[ {} CLI   | version {:<10} | {:^20} | {:^18} ]",
         "Hœnir".blue().bold(),
         VERSION.blue(),
         "-",
-        "-"
+        "© G0los 2024"
     );
 
 }
