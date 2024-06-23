@@ -6,9 +6,9 @@ pub mod logo;
 pub fn hello(){
 
     println!(
-        "[ {} CLI  | version {:<9} | {:^22} | {:^22} ]",
+        "[ {} CLI  | {:<17} | {:^20} | {:^20} ]",
         "Hœnir".blue().bold(),
-        VERSION.blue(),
+        format!( "version {}", VERSION.blue()),
         "-",
         "-"
     );
