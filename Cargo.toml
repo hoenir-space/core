@@ -1,6 +1,6 @@
 [package]
 name = "hoenir-core"
-version = "0.1.16"
+version = "0.1.17"
 edition = "2021"
 authors = ["G0los <golos@hoenir.space>"]
 categories = ["network-programming", "data-structures", "command-line-utilities", "web-programming"]
