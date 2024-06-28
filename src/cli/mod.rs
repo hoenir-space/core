@@ -2,12 +2,13 @@ use std::ops::{Add, Sub};
 use colored::Colorize;
 use crate::VERSION;
 use std::time::{Duration, SystemTime};
+use thousands::Separable;
 pub mod logo;
 
 
 
 fn get_sys_time_in_secs() -> u64 {
-    match SystemTime::now().duration_since(SystemTime::UNIX_EPOCH.add(Duration::new(1708729200,0))) {
+    match SystemTime::now().duration_since(SystemTime::UNIX_EPOCH.add(Duration::new(1718632413,0))) {
         Ok(n) => n.as_secs(),
         Err(_) => panic!("SystemTime before UNIX EPOCH!"),
     }
@@ -15,12 +16,14 @@ fn get_sys_time_in_secs() -> u64 {
 
 pub fn hello(){
 
+    let version_str = format!("version {}",VERSION);
+    let time_str = format!("t= {}",get_sys_time_in_secs().separate_with_spaces());
     println!(
-        "[ {} CLI | version {:<10} | {:^12} | {:^28} ]",
-        "Hœnir".blue().bold(),
-        VERSION.blue(),
-        get_sys_time_in_secs().to_string(),
-        "(c) G0los 2024 - MIT License"
+        "[  {}  | {:^20} | {:^17} | {:^18} ]",
+        "Hœnir CLI".bright_blue().bold(),
+        version_str,
+        time_str,
+        "© hoenir.space 2024"
     );
 
 }
