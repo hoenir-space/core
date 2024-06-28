@@ -14,3 +14,4 @@ repository = "https://github.com/hoenir-space/core"
 [dependencies]
 colored = "2.1.0"
 console = "0.15.8"
+thousands = "0.2.0"
