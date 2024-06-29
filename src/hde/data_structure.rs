@@ -1,44 +1,54 @@
-use serde::{Deserialize, Serialize};
+use yaserde::*;
 
-#[derive(Debug, Serialize, Deserialize, PartialEq)]
-pub(crate) struct GraphData {
+
+#[derive(Debug, Clone, PartialEq, YaDeserialize, YaSerialize)]
+#[yaserde(
+    root = "data",
+    rename = "data",
+    namespace = "https://hoenir.space/resource/schema/data_graph_v1",
+)]
+pub struct GraphData {
+    #[yaserde(child)]
     graph: Graph
 }
 
-#[derive(Debug, Serialize, Deserialize, PartialEq)]
-pub(crate) struct Graph {
+#[derive(Debug, Clone, PartialEq, YaDeserialize, YaSerialize)]
+pub struct Graph {
+    #[yaserde(attribute)]
     id:String,
+    #[yaserde(attribute, rename = "type")]
     r#type:String,
-    #[serde(rename = "$value")]
-    vertices: Vec<Vertex>
+    #[yaserde(child)]
+    vertex: Vec<Vertex>
 }
 
-#[derive(Debug, Serialize, Deserialize, PartialEq)]
-pub(crate) struct Vertex {
+#[derive(Debug, Clone, PartialEq, YaDeserialize, YaSerialize)]
+pub struct Vertex {
+    #[yaserde(attribute)]
     id:String,
+    #[yaserde(attribute, rename = "type")]
     r#type:String,
-    #[serde(rename = "$value")]
-    content: Vec<VertexContent>
+    #[yaserde(child)]
+    property: Vec<Property>,
+    #[yaserde(child)]
+    edge: Vec<Edge>
 }
 
 
-#[derive(Debug, Serialize, Deserialize, PartialEq)]
-#[serde(rename_all = "kebab-case")]
-enum VertexContent {
-    Property(Property),
-    Edge(Edge),
-}
-
-#[derive(Debug, Serialize, Deserialize, PartialEq)]
-pub(crate) struct Property {
+#[derive(Debug, Clone, PartialEq, YaDeserialize, YaSerialize)]
+pub struct Property {
+    #[yaserde(attribute, rename = "type")]
     r#type:String,
-    #[serde(rename(serialize = "value", deserialize = "$value"))]
+    #[yaserde(text)]
     value:String,
 }
 
-#[derive(Debug, Serialize, Deserialize, PartialEq)]
-pub(crate) struct Edge {
+#[derive(Debug, Clone, PartialEq, YaDeserialize, YaSerialize)]
+pub struct Edge {
+    #[yaserde(attribute, rename = "type")]
     r#type:String,
+    #[yaserde(attribute)]
     value:String,
+    #[yaserde(attribute)]
     target:String,
 }
