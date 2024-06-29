@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="https://hoenir.space/resource/schema/data_graph_v1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="data" type="data:dataType" xmlns:data="https://hoenir.space/resource/schema/data_graph_v1"/>
+    <xs:simpleType name="UUIDType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="hde:(?:[a-z0-9\[](?:[a-z0-9-\[\]|]{0,61}[a-z0-9\[\]])?\.)+[a-z0-9\[][a-z0-9-\[\]|]{0,61}[a-z0-9\[\]]:[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="edgeType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string" xmlns:data="https://hoenir.space/resource/schema/data_graph_v1">
+                <xs:attribute type="data:UUIDType" name="type" use="required" xmlns:data="https://hoenir.space/resource/schema/data_graph_v1"/>
+                <xs:attribute type="xs:float" name="value" use="required" xmlns:data="https://hoenir.space/resource/schema/data_graph_v1"/>
+                <xs:attribute type="data:UUIDType" name="target" use="required" xmlns:data="https://hoenir.space/resource/schema/data_graph_v1"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="propertyType">
+        <xs:simpleContent>
+            <xs:extension base="data:UUIDType" xmlns:data="https://hoenir.space/resource/schema/data_graph_v1">
+                <xs:attribute type="data:UUIDType" name="type" use="required" xmlns:data="https://hoenir.space/resource/schema/data_graph_v1"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="vertexType">
+        <xs:sequence>
+            <xs:element type="data:propertyType" name="property" maxOccurs="unbounded" minOccurs="0" xmlns:data="https://hoenir.space/resource/schema/data_graph_v1"/>
+            <xs:element type="data:edgeType" name="edge" maxOccurs="unbounded" minOccurs="0" xmlns:data="https://hoenir.space/resource/schema/data_graph_v1"/>
+        </xs:sequence>
+        <xs:attribute type="data:UUIDType" name="id" use="required" xmlns:data="https://hoenir.space/resource/schema/data_graph_v1"/>
+        <xs:attribute type="data:UUIDType" name="type" use="required" xmlns:data="https://hoenir.space/resource/schema/data_graph_v1"/>
+    </xs:complexType>
+    <xs:complexType name="graphType">
+        <xs:sequence>
+            <xs:element type="data:vertexType" name="vertex" minOccurs="1" maxOccurs="unbounded" xmlns:data="https://hoenir.space/resource/schema/data_graph_v1"/>
+        </xs:sequence>
+        <xs:attribute type="data:UUIDType" name="id" use="required" xmlns:data="https://hoenir.space/resource/schema/data_graph_v1"/>
+        <xs:attribute type="data:UUIDType" name="type" use="required" xmlns:data="https://hoenir.space/resource/schema/data_graph_v1"/>
+    </xs:complexType>
+    <xs:complexType name="dataType">
+        <xs:sequence>
+            <xs:element type="data:graphType" name="graph" maxOccurs="1" minOccurs="1" xmlns:data="https://hoenir.space/resource/schema/data_graph_v1"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
