@@ -11,10 +11,10 @@ pub struct MainKey{
 impl MainKey{
 
     pub fn new(user_name:&str, password:&str ) -> Self {
-        Self::get_main_secret(user_name, password)
+        Self::get_by_credentials(user_name, password)
     }
 
-    pub fn get_main_secret(user_name:&str, password:&str ) -> Self {
+    pub fn get_by_credentials(user_name:&str, password:&str ) -> Self {
 
         let salt_uuid = Uuid::parse_str("ae95988c-f542-4db7-bf49-e62e7583c356").unwrap();
         let content_str = format!("{} . {}", password, user_name);
@@ -40,14 +40,6 @@ impl MainKey{
         return MainKey{
             static_secret: secret
         };
-    }
-
-    pub fn get_public_key(&self) -> PublicKey {
-        return PublicKey::from(&self.static_secret);
-    }
-
-    pub fn get_public_key_as_base64(&self) -> String {
-        return BASE64_STANDARD.encode(self.get_public_key())
     }
 
     pub fn get_uuid(&self) -> Uuid {
